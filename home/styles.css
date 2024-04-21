@@ -1,0 +1,118 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #000;
+  color: white;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #333;
+}
+
+.nav-list {
+  border: rgba(255, 255, 255, 0.711) solid 1px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+.nav-list li {
+  display: inline;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  border-right: 1px solid white;
+}
+
+.nav-list li:last-child a {
+  border-right: none;
+}
+
+.nav-list li a:hover {
+  background-color: #555;
+}
+.nav-list.show {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 10;
+}
+
+.player_title{
+  text-align: center;
+  background-color: black;
+  margin-top: 30px;
+  margin-bottom: -80px;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: #333;
+  padding: 10px;
+  border: white solid 1px;
+  border-top: none;
+  position: absolute;
+  top: 1;
+  left: 1;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.content {
+  padding: 20px;
+}
+
+.hamburger-dropdown {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  background-color: #333;
+  border: 1px solid rgba(255, 255, 255, 0.711);
+  width: max-content;
+  border-radius: 0 0 5px 5px;
+  z-index: 1;
+}
+
+.hamburger-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger-dropdown li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  text-align: left;
+}
+
+.hamburger-dropdown li a:hover {
+  background-color: #555;
+}
+
+.show {
+  display: block;
+}

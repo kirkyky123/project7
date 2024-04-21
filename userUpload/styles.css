@@ -1,0 +1,83 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #000;
+  color: white;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.inside-section {
+  background-color: #27323d;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.input-label {
+  margin-bottom: 20px;
+}
+
+.input-label label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-label input {
+  width: 95%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #55555551;
+  color: white;
+  border: white solid 1px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.submit:hover {
+  background-color: #555;
+}
+
+.success-message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.player-list h3 {
+  text-align: center;
+}
+
+.submission-message {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#player-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .inside-section {
+    width: 90%;
+  }
+}

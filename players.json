@@ -1,0 +1,184 @@
+{
+  "players": [
+    {
+      "name": "Lionel Messi",
+      "current_season_stats": {
+        "shot_to_goal_ratio": 0.45,
+        "goal_contribution_per_game": 1.2,
+        "assists_per_game": 0.8,
+        "free_kicks_per_game": 0.1
+      },
+      "all_time_stats": {
+        "shot_to_goal_ratio": 0.44,
+        "goal_contribution_per_game": 1.3,
+        "assists_per_game": 0.9,
+        "free_kicks_per_game": 0.2
+      },
+      "trophy_records": {
+        "champions_league": 4,
+        "league_title": 10,
+        "world_cup": 1
+      },
+      "match_history": [
+        {"team": "Barcelona", "opponent": "Real Madrid", "score": "2-1"},
+        {"team": "Barcelona", "opponent": "PSG", "score": "3-0"},
+        {"team": "Barcelona", "opponent": "Bayern Munich", "score": "1-2"},
+        {"team": "Barcelona", "opponent": "Juventus", "score": "4-0"},
+        {"team": "Barcelona", "opponent": "Atletico Madrid", "score": "1-2"},
+        {"team": "Barcelona", "opponent": "Sevilla", "score": "3-1"}
+      ],
+      "worth": [
+        200000000,
+        210000000,
+        220000000,
+        180000000,
+        160000000,
+        150000000
+      ]
+    },
+    {
+      "name": "Cristiano Ronaldo",
+      "current_season_stats": {
+        "shot_to_goal_ratio": 0.23,
+        "goal_contribution_per_game": 1.1,
+        "assists_per_game": 0.7,
+        "free_kicks_per_game": 0.3
+      },
+      "all_time_stats": {
+        "shot_to_goal_ratio": 0.22,
+        "goal_contribution_per_game": 1.2,
+        "assists_per_game": 0.8,
+        "free_kicks_per_game": 0.4
+      },
+      "trophy_records": {
+        "champions_league": 5,
+        "league_title": 7,
+        "world_cup": 0
+      },
+      "match_history": [
+        {"team": "Juventus", "opponent": "AC Milan", "score": "2-0"},
+        {"team": "Juventus", "opponent": "Inter Milan", "score": "1-3"},
+        {"team": "Juventus", "opponent": "Napoli", "score": "0-0"},
+        {"team": "Juventus", "opponent": "Roma", "score": "2-1"},
+        {"team": "Juventus", "opponent": "Atalanta", "score": "3-2"},
+        {"team": "Juventus", "opponent": "Lazio", "score": "1-1"}
+      ],
+      "worth": [
+        90000000,
+        200000000,
+        210000000,
+        150000000,
+        130000000,
+        100000000
+      ]
+    },
+    {
+      "name": "Neymar Jr.",
+      "current_season_stats": {
+        "shot_to_goal_ratio": 0.19,
+        "goal_contribution_per_game": 1.1,
+        "assists_per_game": 0.9,
+        "free_kicks_per_game": 0.2
+      },
+      "all_time_stats": {
+        "shot_to_goal_ratio": 0.18,
+        "goal_contribution_per_game": 1.1,
+        "assists_per_game": 0.8,
+        "free_kicks_per_game": 0.3
+      },
+      "trophy_records": {
+        "champions_league": 1,
+        "league_title": 6,
+        "world_cup": 0
+      },
+      "match_history": [
+        {"team": "Paris Saint-Germain", "opponent": "Marseille", "score": "3-1"},
+        {"team": "Paris Saint-Germain", "opponent": "Lyon", "score": "2-2"},
+        {"team": "Paris Saint-Germain", "opponent": "Monaco", "score": "2-0"},
+        {"team": "Paris Saint-Germain", "opponent": "Nice", "score": "4-1"},
+        {"team": "Paris Saint-Germain", "opponent": "Lille", "score": "2-1"},
+        {"team": "Paris Saint-Germain", "opponent": "Bordeaux", "score": "1-0"}
+      ],
+      "worth": [
+        180000000,
+        190000000,
+        250000000,
+        200000000,
+        170000000,
+        130000000
+      ]
+    },
+    {
+      "name": "Robert Lewandowski",
+      "current_season_stats": {
+        "shot_to_goal_ratio": 0.25,
+        "goal_contribution_per_game": 1.5,
+        "assists_per_game": 0.5,
+        "free_kicks_per_game": 0.1
+      },
+      "all_time_stats": {
+        "shot_to_goal_ratio": 0.24,
+        "goal_contribution_per_game": 1.4,
+        "assists_per_game": 0.6,
+        "free_kicks_per_game": 0.2
+      },
+      "trophy_records": {
+        "champions_league": 1,
+        "league_title": 8,
+        "world_cup": 0
+      },
+      "match_history": [
+        {"team": "Bayern Munich", "opponent": "Borussia Dortmund", "score": "3-1"},
+        {"team": "Bayern Munich", "opponent": "RB Leipzig", "score": "2-0"},
+        {"team": "Bayern Munich", "opponent": "Bayer Leverkusen", "score": "4-1"},
+        {"team": "Bayern Munich", "opponent": "Schalke 04", "score": "5-0"},
+        {"team": "Bayern Munich", "opponent": "Wolfsburg", "score": "3-2"},
+        {"team": "Bayern Munich", "opponent": "Eintracht Frankfurt", "score": "1-1"}
+      ],
+      "worth": [
+        70000000,
+        120000000,
+        150000000,
+        200000000,
+        150000000,
+        120000000
+      ]
+    },
+    {
+      "name": "Mohamed Salah",
+      "current_season_stats": {
+        "shot_to_goal_ratio": 0.22,
+        "goal_contribution_per_game": 1.3,
+        "assists_per_game": 0.6,
+        "free_kicks_per_game": 0.2
+      },
+      "all_time_stats": {
+        "shot_to_goal_ratio": 0.21,
+        "goal_contribution_per_game": 1.2,
+        "assists_per_game": 0.5,
+        "free_kicks_per_game": 0.3
+      },
+      "trophy_records": {
+        "champions_league": 1,
+        "league_title": 5,
+        "world_cup": 0
+      },
+      "match_history": [
+        {"team": "Liverpool", "opponent": "Manchester City", "score": "1-1"},
+        {"team": "Liverpool", "opponent": "Chelsea", "score": "2-0"},
+        {"team": "Liverpool", "opponent": "Tottenham Hotspur", "score": "3-2"},
+        {"team": "Liverpool", "opponent": "Manchester United", "score": "2-1"},
+        {"team": "Liverpool", "opponent": "Arsenal", "score": "4-0"},
+        {"team": "Liverpool", "opponent": "Leicester City", "score": "1-0"}
+      ],
+      "worth": [
+        60000000,
+        90000000,
+        120000000,
+        180000000,
+        160000000,
+        120000000
+      ]
+    }
+  ]
+}

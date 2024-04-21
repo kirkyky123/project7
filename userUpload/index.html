@@ -1,0 +1,55 @@
+<!---Kiran Chhetri CSCE 242--->
+<!---User Upload--->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Upload</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="inside-section">
+    <h2>Add Football Player</h2>
+    <form id="player-form">
+      <div class="input-label">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="input-label">
+        <label for="shot-to-goal-ratio">Current Season Shot-to-Goal Ratio:</label>
+        <input type="number" id="shot-to-goal-ratio" name="shot-to-goal-ratio" step="0.01" required>
+      </div>
+
+      <div class="input-label">
+        <label for="goal-contribution">Current Season Goal Contribution per game:</label>
+        <input type="number" id="goal-contribution" name="goal-contribution-per-game" step="0.1" required>
+      </div>
+
+      <div class="input-label">
+        <label for="assists">Current Season Assists per game:</label>
+        <input type="number" id="assists" name="assists-per-game" step="0.1" required>
+      </div>
+
+      <div class="input-label">
+        <label for="free-kicks">Current Season Free Kicks per game:</label>
+        <input type="number" id="free-kicks" name="free-kicks-per-game" step="0.1" required>
+      </div>
+
+      <input type="submit" value="Submit" class="submit">
+    </form>
+    <div class="success-message" style="display: none;">Player added successfully!</div>
+    <div class="player-list">
+      <h3>Results</h3>
+      <div class="submission-message" style="display: none;">Your player information was submitted to the system.</div>
+      <ul id="player-list"></ul>
+    </div>
+  </div>
+  <script src="src.js"></script>
+</body>
+
+</html>
