@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Stats</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar" id="hideHamburger">
+    <ul class="nav-list">
+      <li onclick="showStat('allTime')">All Time Stats</li>
+      <li onclick="showStat('currentSeason')">Current Season Stats</li>
+      <li onclick="showStat('matchHistory')">Match History</li>
+      <li onclick="showStat('trophies')">Trophy Records</li>
+      <li onclick="showStat('worth')">Player Worth</li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="hamburger-dropdown" id="hamburgerDropdown">
+      <ul>
+        <li onclick="showContent('inquiryForm')">Inquiry Form</li>
+        <li onclick="showContent('uploadPlayer')">Upload Player</li>
+        <li onclick="showContent('video')">Video</li>
+        <li onclick="mainMenu()">Main Menu</li>
+      </ul>
+    </div>
+  </nav>
+  <h1 id="playerName" class="hideHamburger">Player Name</h1>
+  <div class="stats-image" id="top-stats">
+    <span class="stats-image">
+      <div id="allTime" class="stats-section hidden">
+        <div class="stats-container">
+          <h1>All Time Statistics</h1>
+          <div class="stats-flex-container">
+            <div class="chart-container">
+              <img src="images/ball.png" alt="image of ball" width="200px" height="200px" id="ballImg">
+            </div>
+            <div class="stats-info">
+              <div class="stat">
+                <span class="dot dot-shot"></span>
+                <span class="value" id="shotToGoalRatio">Loading...</span>
+                <span class="label">Shot to goal ratio</span>
+              </div>
+              <div class="stat">
+                <span class="dot dot-goal"></span>
+                <span class="value" id="goalContributionPerGame">Loading...</span>
+                <span class="label">Goal contribution per game</span>
+              </div>
+              <div class="stat">
+                <span class="dot dot-assist"></span>
+                <span class="value" id="assistsPerGame">Loading...</span>
+                <span class="label">Assists per game</span>
+              </div>
+              <div class="stat">
+                <span class="dot dot-freekick"></span>
+                <span class="value" id="freeKicksPerGame">Loading...</span>
+                <span class="label">Free kicks per game</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="currentSeason" class="stats-section hidden">
+        <div class="stats-container">
+          <h1>Current Season Statistics</h1>
+          <div class="stats-flex-container">
+            <div class="chart-container">
+              <img src="images/ball.png" alt="image of ball" width="200px" height="200px" id="ballImg">
+            </div>
+            <div class="stats-info">
+              <div class="stat">
+                <span class="dot dot-shot"></span>
+                <span class="value" id="currentShotToGoalRatio">Loading...</span>
+                <span class="label">Shot to goal ratio</span>
+              </div>
+              <div class="stat">
+                <span class="dot dot-goal"></span>
+                <span class="value" id="currentGoalContributionPerGame">Loading...</span>
+                <span class="label">Goal contribution per game</span>
+              </div>
+              <div class="stat">
+                <span class="dot dot-assist"></span>
+                <span class="value" id="currentAssistsPerGame">Loading...</span>
+                <span class="label">Assists per game</span>
+              </div>
+              <div class="stat">
+                <span class="dot dot-freekick"></span>
+                <span class="value" id="currentFreeKicksPerGame">Loading...</span>
+                <span class="label">Free kicks per game</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="matchHistory" class="stats-section hidden">
+        <div class="stats-container">
+          <h1>Match History</h1>
+          <div class="content">
+            <div class="table" id="matchHistoryTable"></div>
+          </div>
+        </div>
+      </div>
+      <div id="trophies" class="stats-section hidden">
+        <div class="stats-container">
+          <h1>Trophy Records</h1>
+          <div class="trophy-stats-flex-container">
+          </div>
+        </div>
+      </div>
+      <div id="worth" class="stats-section hidden">
+        <div class="stats-container" id="bar-chart-stats-container">
+          <h1>$ Worth</h1>
+          <h3>Player worth over time, in $ millions</h3>
+          <div class="stats-flex-container" id="bar-chart-container">
+            <div id="columnchart_values"></div>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
+  <div id="inquiryForm" class="content-section hidden">
+    <button id="homeButton" onclick="showHome()">Home</button>
+    <div class="inquiry-section">
+      <div class=".inquiry-form textarea">
+        <div class="text-center">
+          <h1>
+            Contact me
+          </h1>
+          <p>
+            Fill up the form below to send me a message.
+          </p>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+          <input type="hidden" name="access_key" value="cdd29c1c-7830-499b-a815-1f8079ebd2a7" />
+          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+          <input type="checkbox" name="botcheck" id="" style="display: none;" />
+          <div class="input-label">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="input-label">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="you@company.com" required />
+          </div>
+          <div class="input-label">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required />
+          </div>
+          <div class="input-label">
+            <label for="message">Your Message</label><br>
+            <textarea rows="5" name="message" id="message" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="input-label">
+            <button type="submit" class="submitButton">
+              Send Message
+            </button>
+          </div>
+          <p id="result"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="uploadPlayer" class="content-section hidden">
+    <button id="homeButton" onclick="showHome()">Home</button>
+    <div class="inside-section">
+      <h2>Add Football Player</h2>
+      <form id="player-form">
+        <div class="input-label">
+          <label for="player-name">Name:</label>
+          <input type="text" id="player-name" name="name" required>
+        </div>
+        <div class="input-label">
+          <label for="current-season-stats">Current Season Stats:</label>
+          <input type="number" id="shot-to-goal-ratio" name="current_season_stats[shot_to_goal_ratio]" step="0.01"
+            required placeholder="Shot-to-Goal Ratio">
+          <input type="number" id="goal-contribution" name="current_season_stats[goal_contribution_per_game]"
+            step="0.01" required placeholder="Goal Contribution per game">
+          <input type="number" id="assists" name="current_season_stats[assists_per_game]" step="0.01" required
+            placeholder="Assists per game">
+          <input type="number" id="free-kicks" name="current_season_stats[free_kicks_per_game]" step="0.01" required
+            placeholder="Free Kicks per game">
+        </div>
+
+        <div class="input-label">
+          <label for="all-time-stats">All Time Statistics:</label>
+          <input type="number" id="all-time-shot-to-goal-ratio" name="all_time_stats[shot_to_goal_ratio]" step="0.01"
+            required placeholder="Shot-to-Goal Ratio">
+          <input type="number" id="all-time-goal-contribution" name="all_time_stats[goal_contribution_per_game]"
+            step="0.01" required placeholder="Goal Contribution per game">
+          <input type="number" id="all-time-assists" name="all_time_stats[assists_per_game]" step="0.01" required
+            placeholder="Assists per game">
+          <input type="number" id="all-time-free-kicks" name="all_time_stats[free_kicks_per_game]" step="0.01" required
+            placeholder="Free Kicks per game">
+        </div>
+
+        <div class="input-label">
+          <label for="trophy-records">Trophy Records:</label>
+          <input type="number" id="champions-league" name="trophy_records[champions_league]" required
+            placeholder="Champions League">
+          <input type="number" id="league-title" name="trophy_records[league_title]" required
+            placeholder="League Title">
+          <input type="number" id="world-cup" name="trophy_records[world_cup]" required placeholder="World Cup">
+        </div>
+
+        <div class="input-label1">
+          <label for="match-history">Match History:</label>
+          <div class="match-input">
+            <h4>Match 1:</h4>
+            <input type="text" id="match1-team" name="match_history[0][team]" required placeholder="Team Name"
+              class="small-input">
+            <input type="number" id="match1-score" name="match_history[0][score]" required placeholder="Score"
+              class="small-input">
+            <h4 style="display: inline;">vs</h4>
+            <input type="text" id="match1-opponent" name="match_history[0][opponent]" required
+              placeholder="Opponent Name" class="small-input">
+            <input type="number" id="match1-opponent-score" name="match_history[0][opponent_score]" required
+              placeholder="Score" class="small-input">
+          </div>
+          <div class="match-input">
+            <h4>Match 2:</h4>
+            <input type="text" id="match2-team" name="match_history[1][team]" required placeholder="Team Name"
+              class="small-input">
+            <input type="number" id="match2-score" name="match_history[1][score]" required placeholder="Score"
+              class="small-input">
+            <h4 style="display: inline;">vs</h4>
+            <input type="text" id="match2-opponent" name="match_history[1][opponent]" required
+              placeholder="Opponent Name" class="small-input">
+            <input type="number" id="match2-opponent-score" name="match_history[1][opponent_score]" required
+              placeholder="Score" class="small-input">
+          </div>
+
+          <div class="match-input">
+            <h4>Match 3:</h4>
+            <input type="text" id="match3-team" name="match_history[2][team]" required placeholder="Team Name"
+              class="small-input">
+            <input type="number" id="match3-score" name="match_history[2][score]" required placeholder="Score"
+              class="small-input">
+            <h4 style="display: inline;">vs</h4>
+            <input type="text" id="match3-opponent" name="match_history[2][opponent]" required
+              placeholder="Opponent Name" class="small-input">
+            <input type="number" id="match3-opponent-score" name="match_history[2][opponent_score]" required
+              placeholder="Score" class="small-input">
+          </div>
+
+          <div class="match-input">
+            <h4>Match 4:</h4>
+            <input type="text" id="match4-team" name="match_history[3][team]" required placeholder="Team Name"
+              class="small-input">
+            <input type="number" id="match4-score" name="match_history[3][score]" required placeholder="Score"
+              class="small-input">
+            <h4 style="display: inline;">vs</h4>
+            <input type="text" id="match4-opponent" name="match_history[3][opponent]" required
+              placeholder="Opponent Name" class="small-input">
+            <input type="number" id="match4-opponent-score" name="match_history[3][opponent_score]" required
+              placeholder="Score" class="small-input">
+          </div>
+
+          <div class="match-input">
+            <h4>Match 5:</h4>
+            <input type="text" id="match5-team" name="match_history[4][team]" required placeholder="Team Name"
+              class="small-input">
+            <input type="number" id="match5-score" name="match_history[4][score]" required placeholder="Score"
+              class="small-input">
+            <h4 style="display: inline;">vs</h4>
+            <input type="text" id="match5-opponent" name="match_history[4][opponent]" required
+              placeholder="Opponent Name" class="small-input">
+            <input type="number" id="match5-opponent-score" name="match_history[4][opponent_score]" required
+              placeholder="Score" class="small-input">
+          </div>
+
+          <div class="match-input">
+            <h4>Match 6:</h4>
+            <input type="text" id="match6-team" name="match_history[5][team]" required placeholder="Team Name"
+              class="small-input">
+            <input type="number" id="match6-score" name="match_history[5][score]" required placeholder="Score"
+              class="small-input">
+            <h4 style="display: inline;">vs</h4>
+            <input type="text" id="match6-opponent" name="match_history[5][opponent]" required
+              placeholder="Opponent Name" class="small-input">
+            <input type="number" id="match6-opponent-score" name="match_history[5][opponent_score]" required
+              placeholder="Score" class="small-input">
+          </div>
+
+        </div>
+
+        <div class="input-label">
+          <label for="worth">Player Worth (in $ millions):</label>
+          <input type="number" id="worth-2014" name="worth[2014]" required placeholder="2014 Worth">
+          <input type="number" id="worth-2016" name="worth[2016]" required placeholder="2016 Worth">
+          <input type="number" id="worth-2018" name="worth[2018]" required placeholder="2018 Worth">
+          <input type="number" id="worth-2020" name="worth[2020]" required placeholder="2020 Worth">
+          <input type="number" id="worth-2022" name="worth[2022]" required placeholder="2022 Worth">
+          <input type="number" id="worth-2024" name="worth[2024]" required placeholder="2024 Worth">
+        </div>
+
+        <input type="submit" value="Submit" class="submit">
+      </form>
+      <div class="success-message" style="display: none;">Player added successfully!</div>
+      <div class="player-list">
+        <h3>Results</h3>
+        <div class="submission-message" style="display: none;">Your player information was submitted to the system.
+        </div>
+        <ul id="player-list"></ul>
+      </div>
+    </div>
+  </div>
+  <div id="video" class="content-section hidden">
+    <button id="homeButton" onclick="showHome()">Home</button>
+    <div class="inside-section">
+      <h2>Video</h2>
+      <div class="video">
+        <iframe id="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/3ccgweq3aTo"
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="stats.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</body>
+
+</html>
