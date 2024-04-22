@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Player Stats</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -28,6 +29,7 @@
         <li onclick="showContent('uploadPlayer')">Upload Player</li>
         <li onclick="showContent('video')">Video</li>
         <li onclick="mainMenu()">Main Menu</li>
+        <li onclick="deleteCurrentPlayer()">Delete Player</li>
       </ul>
     </div>
   </nav>
@@ -132,11 +134,8 @@
           <h1>
             Contact me
           </h1>
-          <p>
-            Fill up the form below to send me a message.
-          </p>
         </div>
-        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+        <form method="POST" id="form" onsubmit="submitForm(event)">
           <input type="hidden" name="access_key" value="cdd29c1c-7830-499b-a815-1f8079ebd2a7" />
           <input type="hidden" name="subject" value="New Submission from Web3Forms" />
           <input type="checkbox" name="botcheck" id="" style="display: none;" />
@@ -146,11 +145,11 @@
           </div>
           <div class="input-label">
             <label for="email">Email Address</label>
-            <input type="email" name="email" id="email" placeholder="you@company.com" required />
+            <input type="email" name="email" id="email" placeholder="you@mail.com" required />
           </div>
           <div class="input-label">
             <label for="phone">Phone Number</label>
-            <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required />
+            <input type="text" name="phone" id="phone" placeholder="+1 (123)-345-6789" required />
           </div>
           <div class="input-label">
             <label for="message">Your Message</label><br>
@@ -160,8 +159,8 @@
             <button type="submit" class="submitButton">
               Send Message
             </button>
+            <p class="inquirySuccess" style="display: none;">Message sent successfully!</p>
           </div>
-          <p id="result"></p>
         </form>
       </div>
     </div>

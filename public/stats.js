@@ -133,6 +133,81 @@ function populateStats(player) {
   }
 }
 
+function deleteCurrentPlayer() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const playerId = urlParams.get("player");
+  const playerName = document.getElementById("playerName").textContent;
+
+  if (!playerId) {
+    console.error("No player ID found");
+    return;
+  }
+
+  if (playerId != "6626ea2cd9f18ef506d3e598"){
+    Swal.fire({
+      title: "Delete Player",
+      text: "Are you sure you want to delete " + playerName + "?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete!",
+      customClass: {
+        popup: "delete-popup",
+        title: "delete-title",
+        content: "delete-content",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(playerId);
+        deletePlayer(playerId);
+      }
+    });
+  }
+  else{
+    Swal.fire({
+      title: "Error",
+      text: "You are not allowed to delete " + playerName + "! (try another account)", // for testing purposes
+      icon: "warning",
+      confirmButtonColor: "#d33",
+      confirmButtonText: "Okay!",
+      customClass: {
+        popup: "delete-popup",
+        title: "delete-title",
+        content: "delete-content",
+      },
+    })
+  }
+}
+
+async function deletePlayer(playerId) {
+  try {
+    const response = await fetch(`/api/players/${playerId}`, {
+      method: "DELETE",
+    });
+
+    const playerName = document.getElementById("playerName").textContent;
+    if (response.ok) {
+      Swal.fire({
+        title: "Deleted!",
+        text: playerName + " has been deleted.",
+        icon: "success",
+        customClass: {
+          popup: "delete-popup",
+          title: "delete-title",
+          content: "delete-content",
+        },
+      }).then(() => {
+        window.location.href = "/";
+      });
+    } else {
+      console.error("Failed to delete player");
+    }
+  } catch (error) {
+    console.error("Error deleting player:", error);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const playerData = urlParams.get("player");
@@ -186,7 +261,7 @@ menuToggle.onclick = function () {
 
 function showContent(contentId) {
   const sections = document.querySelectorAll(
-    ".stats-image, .content-section, .navbar, .hideHamburger"
+    ".stats-image, .content-section, .navbar, .hideHamburger, .homePage"
   );
   sections.forEach((section) => section.classList.add("hidden"));
 
@@ -203,8 +278,36 @@ function showContent(contentId) {
   hamburgerDropdown.classList.toggle("hide");
 }
 
-function mainMenu(){
-  window.location.href = `index.html`;
+function mainMenu() {
+  window.location.href = "/";
+}
+
+function submitForm(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('form');
+  const formData = new FormData(form);
+
+  fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+  })
+  .then(response => {
+      if (response.ok) {
+          console.log('Form submitted successfully');
+          form.reset();
+      } else {
+          console.error('Form submission failed');
+      }
+  })
+  .catch(error => {
+      console.error('Error:', error);
+  });
+  const successMessage = document.querySelector('.inquirySuccess');
+  successMessage.style.display = "block";
+  setTimeout(() => {
+    successMessage.style.display = "none";
+  }, 2000);
 }
 
 function showHome() {
@@ -212,7 +315,7 @@ function showHome() {
   contentSections.forEach((section) => section.classList.add("hidden"));
 
   const statsSections = document.querySelectorAll(
-    ".stats-image, .navbar, .hideHamburger"
+    ".stats-image, .navbar, .hideHamburger, .homePage"
   );
   statsSections.forEach((section) => section.classList.remove("hidden"));
 
@@ -277,12 +380,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     const worth = [
-      parseInt(document.getElementById("worth-2014").value*1000000),
-      parseInt(document.getElementById("worth-2016").value*1000000),
-      parseInt(document.getElementById("worth-2018").value*1000000),
-      parseInt(document.getElementById("worth-2020").value*1000000),
-      parseInt(document.getElementById("worth-2022").value*1000000),
-      parseInt(document.getElementById("worth-2024").value*1000000),
+      parseInt(document.getElementById("worth-2014").value * 1000000),
+      parseInt(document.getElementById("worth-2016").value * 1000000),
+      parseInt(document.getElementById("worth-2018").value * 1000000),
+      parseInt(document.getElementById("worth-2020").value * 1000000),
+      parseInt(document.getElementById("worth-2022").value * 1000000),
+      parseInt(document.getElementById("worth-2024").value * 1000000),
     ];
 
     const player = {
@@ -321,6 +424,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error:", error);
     }
 
-    // playerForm.reset();
+    playerForm.reset();
   });
 });

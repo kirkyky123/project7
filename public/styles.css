@@ -60,12 +60,21 @@ header h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.stats-box button{
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .dropdown-text {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.4em;
   margin-top: -50px;
   margin-bottom: 30px;
   font-weight: bold;
+}
+
+
+.playerUploadBtn{
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .stats-box select {
@@ -201,6 +210,11 @@ h1 {
 .text-center {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.text-center h1 {
+  margin-bottom: 20px;
+
 }
 
 .text-center p {
@@ -363,6 +377,22 @@ h1 {
   margin-bottom: 10px;
 }
 
+.delete-popup {
+  background-color: #52585e;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.delete-title {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.delete-content {
+  font-size: 16px;
+  color: #ffffff;
+}
+
 #player-list {
   list-style-type: none;
   padding: 0;
@@ -512,7 +542,6 @@ h1 {
   width: 100%;
   max-width: 1000px;
   height: 400px;
-  margin: auto;
 }
 
 #columnchart_values {
@@ -537,8 +566,8 @@ h1 {
     margin: 20px auto;
   }
   #bar-chart-stats-container {
-    padding: 10px;
     width: 20%;
+    justify-content: left;
   }
   .stats-container h1 {
     margin-bottom: 20px;
@@ -577,7 +606,7 @@ h1 {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   #bar-chart-stats-container {
     width: 30%;
     padding-left: -20px;
@@ -585,8 +614,3 @@ h1 {
   }
 }
 
-@media (max-width: 800px) {
-  .video-container {
-    padding-bottom: 75%;
-  }
-}
